@@ -25,7 +25,6 @@ function lib:CreateWindow(name)
     local UIListLayout1 = Instance.new("UIListLayout")
     local tabthing = Instance.new("Frame")
     local tabdivider = Instance.new("Frame")
-    local UIGradient1 = Instance.new("UIGradient")
 
     private.Name = "private"
     private.Parent = game:GetService("CoreGui")
@@ -117,14 +116,10 @@ function lib:CreateWindow(name)
 
     tabdivider.Name = "tabdivider"
     tabdivider.Parent = Main_Box
-    tabdivider.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+    tabdivider.BackgroundColor3 = Color3.fromRGB(120, 120, 120)
     tabdivider.BorderSizePixel = 0
     tabdivider.Position = UDim2.new(0, 0, 0.149999842, 0)
     tabdivider.Size = UDim2.new(1, 0, 0, 1)
-
-    UIGradient1.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(209, 255, 0)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(255, 82, 85))}
-    UIGradient1.Rotation = 90
-    UIGradient1.Parent = tabdivider
 
     Frame_holder.CanvasSize = UDim2.new(0,0,0,Frame_holder.UIListLayout.AbsoluteContentSize.Y)
 	Frame_holder.ChildAdded:Connect(function()
