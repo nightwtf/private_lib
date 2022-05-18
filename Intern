@@ -81,12 +81,13 @@ function lib:CreateWindow(name)
     Label_3.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
     Label_3.BackgroundTransparency = 1.000
     Label_3.BorderSizePixel = 0
-    Label_3.Position = UDim2.new(0.143, -50, 0, -17)
+    Label_3.Position = UDim2.new(0.171, -50, 0, -17)
     Label_3.Size = UDim2.new(0, 70, 0, 35)
     Label_3.Font = Enum.Font.Gotham
     Label_3.Text = name
     Label_3.TextColor3 = Color3.fromRGB(230, 230, 230)
     Label_3.TextSize = 16.000
+    Label_3.TextXAlignment = "Left"
 
     UIGradient.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(0, 0, 0)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(255, 255, 255))}
     UIGradient.Offset = Vector2.new(0.200000003, 0.400000006)
