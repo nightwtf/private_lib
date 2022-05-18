@@ -22,7 +22,7 @@ function lib:CreateWindow(name)
     local UIGradient = Instance.new("UIGradient")
     local tab = Instance.new("Frame")
     local UICorner = Instance.new("UICorner")
-    local UIListLayout = Instance.new("UIListLayout")
+    local UIListLayout1 = Instance.new("UIListLayout")
     local tabthing = Instance.new("Frame")
     local tabdivider = Instance.new("Frame")
     local UIGradient1 = Instance.new("UIGradient")
@@ -101,11 +101,11 @@ function lib:CreateWindow(name)
     UICorner.CornerRadius = UDim.new(0, 7)
     UICorner.Parent = tab
     
-    UIListLayout.Parent = tab
-    UIListLayout.FillDirection = Enum.FillDirection.Horizontal
-    UIListLayout.SortOrder = Enum.SortOrder.LayoutOrder
-    UIListLayout.VerticalAlignment = Enum.VerticalAlignment.Center
-    UIListLayout.Padding = UDim.new(0, 3)
+    UIListLayout1.Parent = tab
+    UIListLayout1.FillDirection = Enum.FillDirection.Horizontal
+    UIListLayout1.SortOrder = Enum.SortOrder.LayoutOrder
+    UIListLayout1.VerticalAlignment = Enum.VerticalAlignment.Center
+    UIListLayout1.Padding = UDim.new(0, 3)
 
     tabthing.Name = "tabthing"
     tabthing.Parent = Main_Box
