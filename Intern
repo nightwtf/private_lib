@@ -20,6 +20,12 @@ function lib:CreateWindow(name)
     local Label_3 = Instance.new("TextLabel")
     local UIStroke = Instance.new("UIStroke")
     local UIGradient = Instance.new("UIGradient")
+    local tab = Instance.new("Frame")
+    local UICorner = Instance.new("UICorner")
+    local UIListLayout = Instance.new("UIListLayout")
+    local tabthing = Instance.new("Frame")
+    local tabdivider = Instance.new("Frame")
+    local UIGradient1 = Instance.new("UIGradient")
 
     private.Name = "private"
     private.Parent = game:GetService("CoreGui")
@@ -86,6 +92,38 @@ function lib:CreateWindow(name)
     UIGradient.Offset = Vector2.new(0.200000003, 0.400000006)
     UIGradient.Rotation = 270
     UIGradient.Parent = Label_3
+    
+    tab.Name = "tab"
+    tab.Parent = Main_Box
+    tab.BackgroundColor3 = Color3.fromRGB(38, 38, 38)
+    tab.Size = UDim2.new(1, 0, 0, 30)
+    
+    UICorner.CornerRadius = UDim.new(0, 7)
+    UICorner.Parent = tab
+    
+    UIListLayout.Parent = tab
+    UIListLayout.FillDirection = Enum.FillDirection.Horizontal
+    UIListLayout.SortOrder = Enum.SortOrder.LayoutOrder
+    UIListLayout.VerticalAlignment = Enum.VerticalAlignment.Center
+    UIListLayout.Padding = UDim.new(0, 3)
+
+    tabthing.Name = "tabthing"
+    tabthing.Parent = Main_Box
+    tabthing.BackgroundColor3 = Color3.fromRGB(38, 38, 38)
+    tabthing.BorderSizePixel = 0
+    tabthing.Position = UDim2.new(0, 0, 0.0533331297, 0)
+    tabthing.Size = UDim2.new(1, 0, -0.0533332825, 30)
+
+    tabdivider.Name = "tabdivider"
+    tabdivider.Parent = Main_Box
+    tabdivider.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+    tabdivider.BorderSizePixel = 0
+    tabdivider.Position = UDim2.new(0, 0, 0.149999842, 0)
+    tabdivider.Size = UDim2.new(1, 0, 0, 1)
+
+    UIGradient1.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(209, 255, 0)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(255, 82, 85))}
+    UIGradient1.Rotation = 90
+    UIGradient1.Parent = tabdivider
 
     Frame_holder.CanvasSize = UDim2.new(0,0,0,Frame_holder.UIListLayout.AbsoluteContentSize.Y)
 	Frame_holder.ChildAdded:Connect(function()
@@ -229,7 +267,6 @@ function lib:CreateWindow(name)
     end
 
     function types:Toggle(text, callback)
-        local actions = {}
 		local enabled = false
 
 		c = c + 1
@@ -426,6 +463,32 @@ function lib:CreateWindow(name)
                 end
             end
         end)
+    end
+
+    function types:Tab(text)
+        c = c + 1
+        text = text or "Tab"
+
+        local LabelTab = Instance.new("TextLabel")
+        local UIGradient = Instance.new("UIGradient")
+
+        LabelTab.Name = "LabelTab"
+        LabelTab.Parent = tab
+        LabelTab.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+        LabelTab.BackgroundTransparency = 1.000
+        LabelTab.BorderSizePixel = 0
+        LabelTab.Position = UDim2.new(0.5, -165, 0.5, -17)
+        LabelTab.Size = UDim2.new(0, 80, 0, 35)
+        LabelTab.ZIndex = 5
+        LabelTab.Font = Enum.Font.Gotham
+        LabelTab.Text = text
+        LabelTab.TextColor3 = Color3.fromRGB(230, 230, 230)
+        LabelTab.TextSize = 14.000
+        
+        UIGradient.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(0, 0, 0)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(255, 255, 255))}
+        UIGradient.Offset = Vector2.new(0.200000003, 0.400000006)
+        UIGradient.Rotation = 270
+        UIGradient.Parent = LabelTab
     end
 
     return types
