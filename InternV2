@@ -190,7 +190,7 @@ function lib:CreateWindow(name)
         Button.Size = UDim2.new(0, 375, 0, 42)
         Button.AutoButtonColor = false
         Button.Font = Enum.Font.SourceSans
-        Button.Text = text
+        Button.Text = ""
         Button.TextColor3 = Color3.fromRGB(0, 0, 0)
         Button.TextSize = 14.000
         Button.LayoutOrder = c
@@ -206,7 +206,7 @@ function lib:CreateWindow(name)
         ButtonTitle.Position = UDim2.new(0.0358126722, 0, 0, 0)
         ButtonTitle.Size = UDim2.new(0, 187, 0, 42)
         ButtonTitle.Font = Enum.Font.Gotham
-        ButtonTitle.Text = "Button"
+        ButtonTitle.Text = text
         ButtonTitle.TextColor3 = Color3.fromRGB(255, 255, 255)
         ButtonTitle.TextSize = 14.000
         ButtonTitle.TextXAlignment = Enum.TextXAlignment.Left
