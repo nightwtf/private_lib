@@ -127,7 +127,7 @@ function lib:CreateWindow(name)
 	end) 
 
     local function QIOPIQ_fake_script() -- top_frame.DragSript 
-		local script = Instance.new('LocalScript', Main)
+		local script = Instance.new('LocalScript', main_holder)
 
 		local UserInputService = game:GetService("UserInputService")
 
