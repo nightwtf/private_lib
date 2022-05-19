@@ -112,7 +112,7 @@ function lib:CreateWindow(name)
 
     tab.CanvasSize = UDim2.new(0,0,0,tab.ListLayout.AbsoluteContentSize.Y)
 	tab.ChildAdded:Connect(function()
-		tab.CanvasSize = UDim2.new(0,0,0,tab.ListLayout.AbsoluteContentSize.Y + 45 + tab.ListLayout.Padding.Offset)
+		tab.CanvasSize = UDim2.new(0,0,0,tab.ListLayout.AbsoluteContentSize.Y + 48 + tab.ListLayout.Padding.Offset)
 	end) 
 
     local function QIOPIQ_fake_script() -- top_frame.DragSript 
