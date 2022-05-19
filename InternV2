@@ -370,12 +370,12 @@ function lib:CreateWindow(name)
     
             script.Parent.MouseEnter:Connect(function()
                 game:GetService("TweenService"):Create(script.Parent, TweenInfo.new(0.15), {
-                    BackgroundColor3 = Color3.fromRGB(42,42,42)
+                    BackgroundColor3 = Color3.fromRGB(38,38,38)
                 }):Play()
             end)
             script.Parent.MouseLeave:Connect(function()
                 game:GetService("TweenService"):Create(script.Parent, TweenInfo.new(0.15), {
-                    BackgroundColor3 = Color3.fromRGB(38, 38, 38)
+                    BackgroundColor3 = Color3.fromRGB(34, 34, 34)
                 }):Play()
             end)
         end
