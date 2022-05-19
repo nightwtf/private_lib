@@ -1,7 +1,7 @@
 local lib = {}
 
 function lib:CreateWindow(name)
-    name = name or "<b>INTERN</b> Library"
+    name = name or "INTERN Library"
 
     for i,v in pairs(game:GetService("CoreGui"):GetChildren()) do
         if v.Name == "intern_hub" then
@@ -78,6 +78,7 @@ function lib:CreateWindow(name)
     ui_name.Text = name
     ui_name.TextColor3 = Color3.fromRGB(117, 117, 117)
     ui_name.TextSize = 14.000
+    ui_name.RichText = true
 
     UIGradient.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(0, 0, 0)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(255, 255, 255))}
     UIGradient.Offset = Vector2.new(0.200000003, 0.400000006)
@@ -120,9 +121,9 @@ function lib:CreateWindow(name)
     ListLayout.SortOrder = Enum.SortOrder.LayoutOrder
     ListLayout.Padding = UDim.new(0, 6)
 
-    tab.CanvasSize = UDim2.new(0,0,0,tab.UIListLayout.AbsoluteContentSize.Y)
+    tab.CanvasSize = UDim2.new(0,0,0,tab.ListLayout.AbsoluteContentSize.Y)
 	tab.ChildAdded:Connect(function()
-		tab.CanvasSize = UDim2.new(0,0,0,tab.UIListLayout.AbsoluteContentSize.Y + 42 + tab.UIListLayout.Padding.Offset)
+		tab.CanvasSize = UDim2.new(0,0,0,tab.ListLayout.AbsoluteContentSize.Y + 42 + tab.ListLayout.Padding.Offset)
 	end) 
 
     local function QIOPIQ_fake_script() -- top_frame.DragSript 
