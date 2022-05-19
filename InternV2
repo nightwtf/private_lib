@@ -168,7 +168,8 @@ function lib:CreateWindow(name)
 				update(input)
 			end
 		end)
-    coroutine.wrap(QIOPIQ_fake_script)()    
+	end
+	coroutine.wrap(QIOPIQ_fake_script)() 
     
     local types = {}
 
@@ -227,8 +228,8 @@ function lib:CreateWindow(name)
         coroutine.wrap(QESXMTV_fake_script)()
 
         Button.MouseButton1Down:Connect(function()
-			pcall(callback)
-		end)
+            pcall(callback)
+        end)
     end
 
     return types
