@@ -1,582 +1,237 @@
-local intern_hub = Instance.new("ScreenGui")
-
-
-local main_holder = Instance.new("Frame")
-
-
-local main_bg = Instance.new("Frame")
-
-
-local UICorner = Instance.new("UICorner")
-
-
-local texture = Instance.new("ImageLabel")
-
-
-local smoke = Instance.new("ImageLabel")
-
-
-local ui_name = Instance.new("TextLabel")
-
-
-local UIGradient = Instance.new("UIGradient")
-
-
-local close = Instance.new("ImageLabel")
-
-
-local smoke1 = Instance.new("ImageLabel")
-
-
-local tab = Instance.new("ScrollingFrame")
-
-
-local ListLayout = Instance.new("UIListLayout")
-
-
-local Toggle = Instance.new("TextButton")
-
-
-local ToggleCorner = Instance.new("UICorner")
-
-
-local ToggleTitle = Instance.new("TextLabel")
-
-
-local FrameToggle1 = Instance.new("Frame")
-
-
-local FrameToggle1Corner = Instance.new("UICorner")
-
-
-local Button = Instance.new("TextButton")
-
-
-local ButtonCorner = Instance.new("UICorner")
-
-
-local ButtonTitle = Instance.new("TextLabel")
-
-
-local Bind = Instance.new("TextButton")
-
-
-local ButtonCorner_2 = Instance.new("UICorner")
-
-
-local ButtonTitle_2 = Instance.new("TextLabel")
-
-
-
-intern_hub.Name = "intern_hub"
-
-
-intern_hub.Parent = game:GetService("CoreGui")
-
-
-intern_hub.ResetOnSpawn = false
-
-
-
-main_holder.Name = "main_holder"
-
-
-main_holder.Parent = intern_hub
-
-
-main_holder.BackgroundColor3 = Color3.fromRGB(35, 35, 35)
-
-
-main_holder.BackgroundTransparency = 1.000
-
-
-main_holder.BorderSizePixel = 0
-
-
-main_holder.Position = UDim2.new(0.5, -200, 0.5, -150)
-
-
-main_holder.Size = UDim2.new(0, 400, 0, 300)
-
-
-
-main_bg.Name = "main_bg"
-
-
-main_bg.Parent = main_holder
-
-
-main_bg.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
-
-
-main_bg.BorderColor3 = Color3.fromRGB(27, 42, 53)
-
-
-main_bg.BorderSizePixel = 0
-
-
-main_bg.ClipsDescendants = true
-
-
-main_bg.Position = UDim2.new(0.5, -200, 0.5, -150)
-
-
-main_bg.Size = UDim2.new(0, 400, 0, 300)
-
-
-
-UICorner.CornerRadius = UDim.new(0, 3)
-
-
-UICorner.Parent = main_bg
-
-
-
-texture.Name = "texture"
-
-
-texture.Parent = main_bg
-
-
-texture.BackgroundColor3 = Color3.fromRGB(25, 25, 25)
-
-
-texture.BackgroundTransparency = 1.000
-
-
-texture.BorderSizePixel = 0
-
-
-texture.Size = UDim2.new(1, 0, 1, 0)
-
-
-texture.ZIndex = 0
-
-
-texture.Image = "rbxassetid://7032373975"
-
-
-texture.ImageTransparency = 0.750
-
-
-
-smoke.Name = "smoke"
-
-
-smoke.Parent = main_bg
-
-
-smoke.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-
-
-smoke.BackgroundTransparency = 1.000
-
-
-smoke.BorderColor3 = Color3.fromRGB(27, 42, 53)
-
-
-smoke.Position = UDim2.new(-0.87604171, 0, -0.567592561, 0)
-
-
-smoke.Size = UDim2.new(1.3834002, 0, 1.3834002, 0)
-
-
-smoke.Image = "rbxassetid://1853193216"
-
-
-smoke.ImageTransparency = 0.980
-
-
-
-ui_name.Name = "ui_name"
-
-
-ui_name.Parent = main_bg
-
-
-ui_name.AnchorPoint = Vector2.new(0.5, 0.5)
-
-
-ui_name.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-
-
-ui_name.BackgroundTransparency = 1.000
-
-
-ui_name.BorderSizePixel = 0
-
-
-ui_name.Position = UDim2.new(0.157270208, 0, 0.119999997, -17)
-
-
-ui_name.Size = UDim2.new(0, 125, 0, 35)
-
-
-ui_name.Font = Enum.Font.Gotham
-
-
-ui_name.Text = "<b>INTERN</b> Library"
-
-
-ui_name.TextColor3 = Color3.fromRGB(117, 117, 117)
-
-
-ui_name.TextSize = 14.000
-
-
-
-UIGradient.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(0, 0, 0)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(255, 255, 255))}
-
-
-UIGradient.Offset = Vector2.new(0.200000003, 0.400000006)
-
-
-UIGradient.Rotation = 270
-
-
-UIGradient.Parent = ui_name
-
-
-
-close.Name = "close"
-
-
-close.Parent = main_bg
-
-
-close.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-
-
-close.BackgroundTransparency = 1.000
-
-
-close.BorderSizePixel = 0
-
-
-close.Position = UDim2.new(0.967000008, -14, 0.0700000003, -12)
-
-
-close.Size = UDim2.new(0, 20, 0, 20)
-
-
-close.Image = "rbxassetid://7072725342"
-
-
-close.ImageColor3 = Color3.fromRGB(117, 117, 117)
-
-
-
-smoke1.Name = "smoke1"
-
-
-smoke1.Parent = main_bg
-
-
-smoke1.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-
-
-smoke1.BackgroundTransparency = 1.000
-
-
-smoke1.BorderColor3 = Color3.fromRGB(27, 42, 53)
-
-
-smoke1.Position = UDim2.new(0.57396549, 0, -0.0463237613, 0)
-
-
-smoke1.Size = UDim2.new(1.53799033, 0, 1.53799045, 0)
-
-
-smoke1.Image = "rbxassetid://1853193216"
-
-
-smoke1.ImageTransparency = 0.980
-
-
-
-tab.Name = "tab"
-
-
-tab.Parent = main_bg
-
-
-tab.Active = true
-
-
-tab.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-
-
-tab.BackgroundTransparency = 1.000
-
-
-tab.BorderSizePixel = 0
-
-
-tab.Position = UDim2.new(0.5, -195, 0.150000006, 0)
-
-
-tab.Size = UDim2.new(0, 390, 0, 255)
-
-
-tab.ScrollBarThickness = 0
-
-
-
-ListLayout.Name = "ListLayout"
-
-
-ListLayout.Parent = tab
-
-
-ListLayout.HorizontalAlignment = Enum.HorizontalAlignment.Center
-
-
-ListLayout.SortOrder = Enum.SortOrder.LayoutOrder
-
-
-ListLayout.Padding = UDim.new(0, 6)
-
-
-
-Toggle.Name = "Toggle"
-
-
-Toggle.Parent = tab
-
-
-Toggle.BackgroundColor3 = Color3.fromRGB(34, 34, 34)
-
-
-Toggle.Position = UDim2.new(0.215625003, 0, 0.446271926, 0)
-
-
-Toggle.Size = UDim2.new(0, 375, 0, 42)
-
-
-Toggle.AutoButtonColor = false
-
-
-Toggle.Font = Enum.Font.SourceSans
-
-
-Toggle.Text = ""
-
-
-Toggle.TextColor3 = Color3.fromRGB(0, 0, 0)
-
-
-Toggle.TextSize = 14.000
-
-
-
-ToggleCorner.CornerRadius = UDim.new(0, 5)
-
-
-ToggleCorner.Name = "ToggleCorner"
-
-
-ToggleCorner.Parent = Toggle
-
-
-
-ToggleTitle.Name = "ToggleTitle"
-
-
-ToggleTitle.Parent = Toggle
-
-
-ToggleTitle.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-
-
-ToggleTitle.BackgroundTransparency = 1.000
-
-
-ToggleTitle.Position = UDim2.new(0.0358126722, 0, 0, 0)
-
-
-ToggleTitle.Size = UDim2.new(0, 187, 0, 42)
-
-
-ToggleTitle.Font = Enum.Font.Gotham
-
-
-ToggleTitle.Text = "Toggle"
-
-
-ToggleTitle.TextColor3 = Color3.fromRGB(255, 255, 255)
-
-
-ToggleTitle.TextSize = 14.000
-
-
-ToggleTitle.TextXAlignment = Enum.TextXAlignment.Left
-
-
-
-FrameToggle1.Name = "FrameToggle1"
-
-
-FrameToggle1.Parent = Toggle
-
-
-FrameToggle1.BackgroundColor3 = Color3.fromRGB(45, 45, 45)
-
-
-FrameToggle1.Position = UDim2.new(0.859504104, 0, 0.285714298, 0)
-
-
-FrameToggle1.Size = UDim2.new(0, 37, 0, 18)
-
-
-
-FrameToggle1Corner.CornerRadius = UDim.new(0, 3)
-
-
-FrameToggle1Corner.Name = "FrameToggle1Corner"
-
-
-FrameToggle1Corner.Parent = FrameToggle1
-
-
-
-Button.Name = "Button"
-
-
-Button.Parent = tab
-
-
-Button.BackgroundColor3 = Color3.fromRGB(34, 34, 34)
-
-
-Button.Size = UDim2.new(0, 375, 0, 42)
-
-
-Button.AutoButtonColor = false
-
-
-Button.Font = Enum.Font.SourceSans
-
-
-Button.Text = ""
-
-
-Button.TextColor3 = Color3.fromRGB(0, 0, 0)
-
-
-Button.TextSize = 14.000
-
-
-
-ButtonCorner.CornerRadius = UDim.new(0, 5)
-
-
-ButtonCorner.Name = "ButtonCorner"
-
-
-ButtonCorner.Parent = Button
-
-
-
-ButtonTitle.Name = "ButtonTitle"
-
-
-ButtonTitle.Parent = Button
-
-
-ButtonTitle.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-
-
-ButtonTitle.BackgroundTransparency = 1.000
-
-
-ButtonTitle.Position = UDim2.new(0.0358126722, 0, 0, 0)
-
-
-ButtonTitle.Size = UDim2.new(0, 187, 0, 42)
-
-
-ButtonTitle.Font = Enum.Font.Gotham
-
-
-ButtonTitle.Text = "Button"
-
-
-ButtonTitle.TextColor3 = Color3.fromRGB(255, 255, 255)
-
-
-ButtonTitle.TextSize = 14.000
-
-
-ButtonTitle.TextXAlignment = Enum.TextXAlignment.Left
-
-
-
-Bind.Name = "Bind"
-
-
-Bind.Parent = tab
-
-
-Bind.BackgroundColor3 = Color3.fromRGB(34, 34, 34)
-
-
-Bind.Size = UDim2.new(0, 375, 0, 42)
-
-
-Bind.AutoButtonColor = false
-
-
-Bind.Font = Enum.Font.SourceSans
-
-
-Bind.Text = ""
-
-
-Bind.TextColor3 = Color3.fromRGB(0, 0, 0)
-
-
-Bind.TextSize = 14.000
-
-
-
-ButtonCorner_2.CornerRadius = UDim.new(0, 5)
-
-
-ButtonCorner_2.Name = "ButtonCorner"
-
-
-ButtonCorner_2.Parent = Bind
-
-
-
-ButtonTitle_2.Name = "ButtonTitle"
-
-
-ButtonTitle_2.Parent = Bind
-
-
-ButtonTitle_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-
-
-ButtonTitle_2.BackgroundTransparency = 1.000
-
-
-ButtonTitle_2.Position = UDim2.new(0.0358126722, 0, 0, 0)
-
-
-ButtonTitle_2.Size = UDim2.new(0, 187, 0, 42)
-
-
-ButtonTitle_2.Font = Enum.Font.Gotham
-
-
-ButtonTitle_2.Text = "UI Keybind: RightControl"
-
-
-ButtonTitle_2.TextColor3 = Color3.fromRGB(255, 255, 255)
-
-
-ButtonTitle_2.TextSize = 14.000
-
-
-ButtonTitle_2.TextXAlignment = Enum.TextXAlignment.Left
+local lib = {}
+
+function lib:CreateWindow(name)
+    name = name or "Intern"
+
+    for i,v in pairs(game:GetService("CoreGui"):GetChildren()) do
+        if v.Name == "intern_hub" then
+            v:Destroy()
+        end
+    end
+
+    local intern_hub = Instance.new("ScreenGui")
+    local main_holder = Instance.new("Frame")
+    local main_bg = Instance.new("Frame")
+    local UICorner = Instance.new("UICorner")
+    local texture = Instance.new("ImageLabel")
+    local smoke = Instance.new("ImageLabel")
+    local ui_name = Instance.new("TextLabel")
+    local UIGradient = Instance.new("UIGradient")
+    local close = Instance.new("ImageLabel")
+    local smoke1 = Instance.new("ImageLabel")
+    local tab = Instance.new("ScrollingFrame")
+    local ListLayout = Instance.new("UIListLayout")
+
+    intern_hub.Name = "intern_hub"
+    intern_hub.Parent = game:GetService("CoreGui")
+    intern_hub.ResetOnSpawn = false
+
+    main_holder.Name = "main_holder"
+    main_holder.Parent = intern_hub
+    main_holder.BackgroundColor3 = Color3.fromRGB(35, 35, 35)
+    main_holder.BackgroundTransparency = 1.000
+    main_holder.BorderSizePixel = 0
+    main_holder.Position = UDim2.new(0.5, -200, 0.5, -150)
+    main_holder.Size = UDim2.new(0, 400, 0, 300)
+
+    main_bg.Name = "main_bg"
+    main_bg.Parent = main_holder
+    main_bg.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
+    main_bg.BorderColor3 = Color3.fromRGB(27, 42, 53)
+    main_bg.BorderSizePixel = 0
+    main_bg.ClipsDescendants = true
+    main_bg.Position = UDim2.new(0.5, -200, 0.5, -150)
+    main_bg.Size = UDim2.new(0, 400, 0, 300)
+
+    UICorner.CornerRadius = UDim.new(0, 3)
+    UICorner.Parent = main_bg
+
+    texture.Name = "texture"
+    texture.Parent = main_bg
+    texture.BackgroundColor3 = Color3.fromRGB(25, 25, 25)
+    texture.BackgroundTransparency = 1.000
+    texture.BorderSizePixel = 0
+    texture.Size = UDim2.new(1, 0, 1, 0)
+    texture.ZIndex = 0
+    texture.Image = "rbxassetid://7032373975"
+    texture.ImageTransparency = 0.750
+
+    smoke.Name = "smoke"
+    smoke.Parent = main_bg
+    smoke.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+    smoke.BackgroundTransparency = 1.000
+    smoke.BorderColor3 = Color3.fromRGB(27, 42, 53)
+    smoke.Position = UDim2.new(-0.87604171, 0, -0.567592561, 0)
+    smoke.Size = UDim2.new(1.3834002, 0, 1.3834002, 0)
+    smoke.Image = "rbxassetid://1853193216"
+    smoke.ImageTransparency = 0.980
+
+    ui_name.Name = "ui_name"
+    ui_name.Parent = main_bg
+    ui_name.AnchorPoint = Vector2.new(0.5, 0.5)
+    ui_name.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+    ui_name.BackgroundTransparency = 1.000
+    ui_name.BorderSizePixel = 0
+    ui_name.Position = UDim2.new(0.157270208, 0, 0.119999997, -17)
+    ui_name.Size = UDim2.new(0, 125, 0, 35)
+    ui_name.Font = Enum.Font.Gotham
+    ui_name.Text = "<b>INTERN</b> Library"
+    ui_name.TextColor3 = Color3.fromRGB(117, 117, 117)
+    ui_name.TextSize = 14.000
+    ui_name.RichText = true
+
+    UIGradient.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(0, 0, 0)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(255, 255, 255))}
+    UIGradient.Offset = Vector2.new(0.200000003, 0.400000006)
+    UIGradient.Rotation = 270
+    UIGradient.Parent = ui_name
+
+    close.Name = "close"
+    close.Parent = main_bg
+    close.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+    close.BackgroundTransparency = 1.000
+    close.BorderSizePixel = 0
+    close.Position = UDim2.new(0.967000008, -14, 0.0700000003, -12)
+    close.Size = UDim2.new(0, 20, 0, 20)
+    close.Image = "rbxassetid://7072725342"
+    close.ImageColor3 = Color3.fromRGB(117, 117, 117)
+
+    smoke1.Name = "smoke1"
+    smoke1.Parent = main_bg
+    smoke1.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+    smoke1.BackgroundTransparency = 1.000
+    smoke1.BorderColor3 = Color3.fromRGB(27, 42, 53)
+    smoke1.Position = UDim2.new(0.57396549, 0, -0.0463237613, 0)
+    smoke1.Size = UDim2.new(1.53799033, 0, 1.53799045, 0)
+    smoke1.Image = "rbxassetid://1853193216"
+    smoke1.ImageTransparency = 0.980
+
+    tab.Name = "tab"
+    tab.Parent = main_bg
+    tab.Active = true
+    tab.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+    tab.BackgroundTransparency = 1.000
+    tab.BorderSizePixel = 0
+    tab.Position = UDim2.new(0.5, -195, 0.150000006, 0)
+    tab.Size = UDim2.new(0, 390, 0, 255)
+    tab.ScrollBarThickness = 0
+
+    ListLayout.Name = "ListLayout"
+    ListLayout.Parent = tab
+    ListLayout.HorizontalAlignment = Enum.HorizontalAlignment.Center
+    ListLayout.SortOrder = Enum.SortOrder.LayoutOrder
+    ListLayout.Padding = UDim.new(0, 6)
+
+    tab.CanvasSize = UDim2.new(0,0,0,tab.UIListLayout.AbsoluteContentSize.Y)
+	tab.ChildAdded:Connect(function()
+		tab.CanvasSize = UDim2.new(0,0,0,tab.UIListLayout.AbsoluteContentSize.Y + 42 + tab.UIListLayout.Padding.Offset)
+	end) 
+
+    local function QIOPIQ_fake_script() -- top_frame.DragSript 
+		local script = Instance.new('LocalScript', Main)
+
+		local UserInputService = game:GetService("UserInputService")
+
+		local gui = script.Parent
+
+		local dragging
+		local dragInput
+		local dragStart
+		local startPos
+
+		local function update(input)
+			local delta = input.Position - dragStart
+			gui.Position = UDim2.new(startPos.X.Scale, startPos.X.Offset + delta.X, startPos.Y.Scale, startPos.Y.Offset + delta.Y)
+		end
+
+		gui.InputBegan:Connect(function(input)
+			if input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch then
+				dragging = true
+				dragStart = input.Position
+				startPos = gui.Position
+
+				input.Changed:Connect(function()
+					if input.UserInputState == Enum.UserInputState.End then
+						dragging = false
+					end
+				end)
+			end
+		end)
+
+		gui.InputChanged:Connect(function(input)
+			if input.UserInputType == Enum.UserInputType.MouseMovement or input.UserInputType == Enum.UserInputType.Touch then
+				dragInput = input
+			end
+		end)
+
+		UserInputService.InputChanged:Connect(function(input)
+			if input == dragInput and dragging then
+				update(input)
+			end
+		end)
+    coroutine.wrap(QIOPIQ_fake_script)()    
+    
+    local types = {}
+
+	local c = 0
+
+    function types:Button(text, callback)
+        callback = callback or function() end
+		text = text or "Button"
+		c = c + 1
+
+        local Button = Instance.new("TextButton")
+        local ButtonCorner = Instance.new("UICorner")
+        local ButtonTitle = Instance.new("TextLabel")
+
+        Button.Name = "Button"
+        Button.Parent = tab
+        Button.BackgroundColor3 = Color3.fromRGB(34, 34, 34)
+        Button.Size = UDim2.new(0, 375, 0, 42)
+        Button.AutoButtonColor = false
+        Button.Font = Enum.Font.SourceSans
+        Button.Text = text
+        Button.TextColor3 = Color3.fromRGB(0, 0, 0)
+        Button.TextSize = 14.000
+        Button.LayoutOrder = c
+
+        ButtonCorner.CornerRadius = UDim.new(0, 5)
+        ButtonCorner.Name = "ButtonCorner"
+        ButtonCorner.Parent = Button
+
+        ButtonTitle.Name = "ButtonTitle"
+        ButtonTitle.Parent = Button
+        ButtonTitle.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+        ButtonTitle.BackgroundTransparency = 1.000
+        ButtonTitle.Position = UDim2.new(0.0358126722, 0, 0, 0)
+        ButtonTitle.Size = UDim2.new(0, 187, 0, 42)
+        ButtonTitle.Font = Enum.Font.Gotham
+        ButtonTitle.Text = "Button"
+        ButtonTitle.TextColor3 = Color3.fromRGB(255, 255, 255)
+        ButtonTitle.TextSize = 14.000
+        ButtonTitle.TextXAlignment = Enum.TextXAlignment.Left
+
+        local function QESXMTV_fake_script()
+            local script = Instance.new('LocalScript', Button)
+        
+            script.Parent.MouseEnter:Connect(function()
+                game:GetService("TweenService"):Create(script.Parent, TweenInfo.new(0.15), {
+                    BackgroundColor3 = Color3.fromRGB(38,38,38)
+                }):Play()
+            end)
+            script.Parent.MouseLeave:Connect(function()
+                game:GetService("TweenService"):Create(script.Parent, TweenInfo.new(0.15), {
+                    BackgroundColor3 = Color3.fromRGB(34,34,34)
+                }):Play()
+            end)
+        end
+        coroutine.wrap(QESXMTV_fake_script)()
+
+        Button.MouseButton1Down:Connect(function()
+			pcall(callback)
+		end)
+    end
+
+    return types
+end
+
+return lib
