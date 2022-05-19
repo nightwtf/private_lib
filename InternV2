@@ -221,6 +221,192 @@ function lib:CreateWindow(name)
         end)
     end
 
+    function types:Section(text)
+        text = text or "Section"
+        c = c + 1
+        
+        local Section = Instance.new("TextLabel")
+        local UIGradient = Instance.new("UIGradient")
+    
+        Section.Name = "Section"
+        Section.Parent = tab
+        Section.AnchorPoint = Vector2.new(0.5, 0.5)
+        Section.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+        Section.BackgroundTransparency = 1.000
+        Section.BorderSizePixel = 0
+        Section.LayoutOrder = c
+        Section.Position = UDim2.new(0.157270208, 0, 0.119999997, -17)
+        Section.Size = UDim2.new(0, 125, 0, 20)
+        Section.Font = Enum.Font.GothamBold
+        Section.Text = text
+        Section.TextColor3 = Color3.fromRGB(150, 150, 150)
+        Section.TextSize = 14.000
+    
+        UIGradient.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(0, 0, 0)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(255, 255, 255))}
+        UIGradient.Offset = Vector2.new(0.200000003, 0.400000006)
+        UIGradient.Rotation = 270
+        UIGradient.Parent = Section
+    end
+
+    function types:Toggle(text, callback)
+        local enabled = false
+        
+        c = c + 1
+        
+        text = text or "Toggle"
+        callback = callback or function() end
+        
+        local Toggle = Instance.new("TextButton")
+        local ToggleCorner = Instance.new("UICorner")
+        local ToggleTitle = Instance.new("TextLabel")
+        local FrameToggle1 = Instance.new("Frame")
+        local FrameToggle1Corner = Instance.new("UICorner")
+        local UIStrokeToggle = Instance.new("UIStroke")
+    
+        Toggle.Name = "Toggle"
+        Toggle.Parent = tab
+        Toggle.BackgroundColor3 = Color3.fromRGB(34, 34, 34)
+        Toggle.Position = UDim2.new(0.215625003, 0, 0.446271926, 0)
+        Toggle.Size = UDim2.new(0, 375, 0, 42)
+        Toggle.AutoButtonColor = false
+        Toggle.Font = Enum.Font.SourceSans
+        Toggle.Text = ""
+        Toggle.TextColor3 = Color3.fromRGB(0, 0, 0)
+        Toggle.TextSize = 14.000
+        Toggle.LayoutOrder = c
+    
+        ToggleCorner.CornerRadius = UDim.new(0, 5)
+        ToggleCorner.Name = "ToggleCorner"
+        ToggleCorner.Parent = Toggle
+    
+        ToggleTitle.Name = "ToggleTitle"
+        ToggleTitle.Parent = Toggle
+        ToggleTitle.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+        ToggleTitle.BackgroundTransparency = 1.000
+        ToggleTitle.Position = UDim2.new(0.0358126722, 0, 0, 0)
+        ToggleTitle.Size = UDim2.new(0, 187, 0, 42)
+        ToggleTitle.Font = Enum.Font.Gotham
+        ToggleTitle.Text = text
+        ToggleTitle.TextColor3 = Color3.fromRGB(255, 255, 255)
+        ToggleTitle.TextSize = 14.000
+        ToggleTitle.TextXAlignment = Enum.TextXAlignment.Left
+    
+        FrameToggle1.Name = "FrameToggle1"
+        FrameToggle1.Parent = Toggle
+        FrameToggle1.BackgroundColor3 = Color3.fromRGB(37, 37, 37)
+        FrameToggle1.Position = UDim2.new(0.902170777, 0, 0.5, -9)
+        FrameToggle1.Size = UDim2.new(0, 20, 0, 18)
+        
+        UIStrokeToggle.Parent = FrameToggle1
+        UIStrokeToggle.Thickness = 1
+        UIStrokeToggle.Color = Color3.fromRGB(52, 52, 52)
+        UIStrokeToggle.ApplyStrokeMode = "Contextual"
+    
+        FrameToggle1Corner.CornerRadius = UDim.new(0, 3)
+        FrameToggle1Corner.Name = "FrameToggle1Corner"
+        FrameToggle1Corner.Parent = FrameToggle1
+        
+        local function GKQTG_fake_script()
+            local script = Instance.new('LocalScript', Toggle)
+    
+            script.Parent.MouseEnter:Connect(function()
+                game:GetService("TweenService"):Create(script.Parent, TweenInfo.new(0.15), {
+                    BackgroundColor3 = Color3.fromRGB(38,38,38)
+                }):Play()
+            end)
+            script.Parent.MouseLeave:Connect(function()
+                game:GetService("TweenService"):Create(script.Parent, TweenInfo.new(0.15), {
+                    BackgroundColor3 = Color3.fromRGB(34, 34, 34)
+                }):Play()
+            end)
+        end
+        coroutine.wrap(GKQTG_fake_script)()
+        
+        local function Fire()
+            enabled = not enabled
+            FrameToggle1.BackgroundColor3 = enabled and Color3.fromRGB(44, 120, 224) or Color3.fromRGB(37, 37, 37)
+            pcall(callback, enabled)
+        end
+    
+        Toggle.MouseButton1Click:Connect(Fire)
+    end
+
+    function types:Bind()
+        c = c + 1
+        
+        local Bind = Instance.new("TextButton")
+        local ButtonCorner = Instance.new("UICorner")
+        local ButtonTitle = Instance.new("TextLabel")
+    
+        Bind.Name = "Bind"
+        Bind.Parent = tab
+        Bind.BackgroundColor3 = Color3.fromRGB(34, 34, 34)
+        Bind.Size = UDim2.new(0, 375, 0, 42)
+        Bind.AutoButtonColor = false
+        Bind.Font = Enum.Font.SourceSans
+        Bind.Text = ""
+        Bind.TextColor3 = Color3.fromRGB(0, 0, 0)
+        Bind.TextSize = 14.000
+        Bind.LayoutOrder = c
+    
+        ButtonCorner.CornerRadius = UDim.new(0, 5)
+        ButtonCorner.Name = "ButtonCorner"
+        ButtonCorner.Parent = Bind
+    
+        ButtonTitle.Name = "ButtonTitle"
+        ButtonTitle.Parent = Bind
+        ButtonTitle.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+        ButtonTitle.BackgroundTransparency = 1.000
+        ButtonTitle.Position = UDim2.new(0.0358126722, 0, 0, 0)
+        ButtonTitle.Size = UDim2.new(0, 187, 0, 42)
+        ButtonTitle.Font = Enum.Font.Gotham
+        ButtonTitle.Text = "Bind: RightControl"
+        ButtonTitle.TextColor3 = Color3.fromRGB(255, 255, 255)
+        ButtonTitle.TextSize = 14.000
+        ButtonTitle.TextXAlignment = Enum.TextXAlignment.Left
+        
+        local function PACSJVV_fake_script() -- example_bind.LocalScript 
+            local script = Instance.new('LocalScript', Bind)
+    
+            script.Parent.MouseEnter:Connect(function()
+                game:GetService("TweenService"):Create(script.Parent, TweenInfo.new(0.15), {
+                    BackgroundColor3 = Color3.fromRGB(42,42,42)
+                }):Play()
+            end)
+            script.Parent.MouseLeave:Connect(function()
+                game:GetService("TweenService"):Create(script.Parent, TweenInfo.new(0.15), {
+                    BackgroundColor3 = Color3.fromRGB(38, 38, 38)
+                }):Play()
+            end)
+        end
+        coroutine.wrap(PACSJVV_fake_script)()
+        
+        local keybindThing
+        local keybind_listening = false
+        local UIS = game:GetService("UserInputService")
+    
+        Bind.Activated:Connect(function()
+            keybind_listening = true
+            ButtonTitle.Text = "Bind: . . ."
+        end)
+    
+        function GetStringForKeyCode(keyCode)
+            keyCode = tostring(keyCode)
+            keyCode = string.sub(keyCode, string.len("Enum.KeyCode._"))
+            ButtonTitle.Text = "Bind: "..keyCode
+        end
+    
+        UIS.InputBegan:Connect(function(input)
+            if input.UserInputType == Enum.UserInputType.Keyboard then
+                if keybind_listening == true then
+                    keybindThing = UIS:GetKeysPressed()
+                    GetStringForKeyCode(input.KeyCode)
+                    keybind_listening = false
+                end
+            end
+        end)
+    end
+
     return types
 end
 
