@@ -112,7 +112,7 @@ function lib:CreateWindow(name)
 
     tab.CanvasSize = UDim2.new(0,0,0,tab.ListLayout.AbsoluteContentSize.Y)
 	tab.ChildAdded:Connect(function()
-		tab.CanvasSize = UDim2.new(0,0,0,tab.ListLayout.AbsoluteContentSize.Y + 42 + tab.ListLayout.Padding.Offset)
+		tab.CanvasSize = UDim2.new(0,0,0,tab.ListLayout.AbsoluteContentSize.Y + 45 + tab.ListLayout.Padding.Offset)
 	end) 
 
     local function QIOPIQ_fake_script() -- top_frame.DragSript 
@@ -360,7 +360,7 @@ function lib:CreateWindow(name)
         ButtonTitle.Position = UDim2.new(0.0358126722, 0, 0, 0)
         ButtonTitle.Size = UDim2.new(0, 187, 0, 42)
         ButtonTitle.Font = Enum.Font.Gotham
-        ButtonTitle.Text = "Bind: RightControl"
+        ButtonTitle.Text = "Bind: "
         ButtonTitle.TextColor3 = Color3.fromRGB(255, 255, 255)
         ButtonTitle.TextSize = 14.000
         ButtonTitle.TextXAlignment = Enum.TextXAlignment.Left
