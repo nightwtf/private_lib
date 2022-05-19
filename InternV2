@@ -112,7 +112,7 @@ function lib:CreateWindow(name)
 
     tab.CanvasSize = UDim2.new(0,0,0,tab.ListLayout.AbsoluteContentSize.Y)
 	tab.ChildAdded:Connect(function()
-		tab.CanvasSize = UDim2.new(0,0,0,tab.ListLayout.AbsoluteContentSize.Y + 48 + tab.ListLayout.Padding.Offset)
+		tab.CanvasSize = UDim2.new(0,0,0,tab.ListLayout.AbsoluteContentSize.Y + 50 + tab.ListLayout.Padding.Offset)
 	end) 
 
     local function QIOPIQ_fake_script() -- top_frame.DragSript 
@@ -405,6 +405,83 @@ function lib:CreateWindow(name)
                 end
             end
         end)
+    end
+
+    function types:TextBox(text)
+        text = text or "Textbox"
+        c = c + 1
+        
+        local Textbox = Instance.new("Frame")
+        local TextboxCorner = Instance.new("UICorner")
+        local TextboxTitle = Instance.new("TextLabel")
+        local TextboxFrame = Instance.new("Frame")
+        local TextboxFrameCorner = Instance.new("UICorner")
+        local TextBox = Instance.new("TextBox")
+        local TextBoxStroke = Instance.new("UIStroke")
+    
+        Textbox.Name = "Textbox"
+        Textbox.Parent = tab
+        Textbox.BackgroundColor3 = Color3.fromRGB(34, 34, 34)
+        Textbox.ClipsDescendants = true
+        Textbox.Position = UDim2.new(-0.541071415, 0, -0.532915354, 0)
+        Textbox.Size = UDim2.new(0, 375, 0, 42)
+        TextBox.LayoutOrder = c
+    
+        TextboxCorner.CornerRadius = UDim.new(0, 5)
+        TextboxCorner.Name = "TextboxCorner"
+        TextboxCorner.Parent = Textbox
+    
+        TextboxTitle.Name = "TextboxTitle"
+        TextboxTitle.Parent = Textbox
+        TextboxTitle.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+        TextboxTitle.BackgroundTransparency = 1.000
+        TextboxTitle.Position = UDim2.new(0.0358126722, 0, 0.5, -21)
+        TextboxTitle.Size = UDim2.new(0, 187, 0, 42)
+        TextboxTitle.Font = Enum.Font.Gotham
+        TextboxTitle.Text = "Textbox"
+        TextboxTitle.TextColor3 = Color3.fromRGB(255, 255, 255)
+        TextboxTitle.TextSize = 14.000
+        TextboxTitle.TextXAlignment = Enum.TextXAlignment.Left
+    
+        TextboxFrame.Name = "TextboxFrame"
+        TextboxFrame.Parent = TextboxTitle
+        TextboxFrame.BackgroundColor3 = Color3.fromRGB(37, 37, 37)
+        TextboxFrame.Position = UDim2.new(1.3101604, 0, 0.5, -11)
+        TextboxFrame.Size = UDim2.new(0, 100, 0, 23)
+        
+        TextBoxStroke.Parent = TextboxFrame
+        TextBoxStroke.Thickness = 1
+        TextBoxStroke.Color = Color3.fromRGB(52, 52, 52)
+        TextBoxStroke.ApplyStrokeMode = "Contextual"
+    
+        TextboxFrameCorner.CornerRadius = UDim.new(0, 5)
+        TextboxFrameCorner.Name = "TextboxFrameCorner"
+        TextboxFrameCorner.Parent = TextboxFrame
+    
+        TextBox.Parent = TextboxFrame
+        TextBox.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+        TextBox.BackgroundTransparency = 1.000
+        TextBox.Size = UDim2.new(0, 100, 0, 23)
+        TextBox.Font = Enum.Font.Gotham
+        TextBox.Text = ""
+        TextBox.TextColor3 = Color3.fromRGB(255, 255, 255)
+        TextBox.TextSize = 14.000
+        
+        local function PACSJVV_fake_script()
+            local script = Instance.new('LocalScript', TextBox)
+    
+            script.Parent.MouseEnter:Connect(function()
+                game:GetService("TweenService"):Create(script.Parent, TweenInfo.new(0.15), {
+                    BackgroundColor3 = Color3.fromRGB(38,38,38)
+                }):Play()
+            end)
+            script.Parent.MouseLeave:Connect(function()
+                game:GetService("TweenService"):Create(script.Parent, TweenInfo.new(0.15), {
+                    BackgroundColor3 = Color3.fromRGB(34, 34, 34)
+                }):Play()
+            end)
+        end
+        coroutine.wrap(PACSJVV_fake_script)()
     end
 
     return types
