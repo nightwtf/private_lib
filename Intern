@@ -226,9 +226,10 @@ function lib:CreateWindow(name)
         end
         coroutine.wrap(QESXMTV_fake_script)()
 
-        Button.MouseButton1Down:Connect(function()
-			pcall(callback)
-		end)
+            Button.MouseButton1Down:Connect(function()
+                pcall(callback)
+            end)
+        end
     end
 
     return types
