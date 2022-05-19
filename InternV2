@@ -75,7 +75,7 @@ function lib:CreateWindow(name)
     ui_name.Position = UDim2.new(0.157270208, 0, 0.119999997, -17)
     ui_name.Size = UDim2.new(0, 125, 0, 35)
     ui_name.Font = Enum.Font.Gotham
-    ui_name.Text = text
+    ui_name.Text = name
     ui_name.TextColor3 = Color3.fromRGB(117, 117, 117)
     ui_name.TextSize = 14.000
     ui_name.RichText = true
